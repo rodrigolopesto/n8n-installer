@@ -20,34 +20,12 @@ Este script instala e configura o n8n automaticamente na sua VPS Ubuntu.
 
 ## 🔧 Como Instalar
 
-### Opção 1: Instalação Direta (Recomendado)
+### Instalação Completa (Um Comando!)
 
 Conecte-se à sua VPS via SSH e execute:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SEU_USUARIO/n8n-installer/main/install-n8n.sh | sudo bash
-```
-
-### Opção 2: Download e Execução Manual
-
-```bash
-# Baixar o script
-wget https://raw.githubusercontent.com/SEU_USUARIO/n8n-installer/main/install-n8n.sh
-
-# Dar permissão de execução
-chmod +x install-n8n.sh
-
-# Executar
-sudo bash install-n8n.sh
-```
-
-### Opção 3: Clone do Repositório
-
-```bash
-git clone https://github.com/SEU_USUARIO/n8n-installer.git
-cd n8n-installer
-chmod +x install-n8n.sh
-sudo bash install-n8n.sh
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/install-n8n.sh | sudo bash
 ```
 
 ## 🔐 Credenciais Padrão
@@ -59,6 +37,33 @@ Após a instalação, acesse o n8n em:
 - **Senha:** `admin123`
 
 **⚠️ IMPORTANTE:** Altere a senha padrão imediatamente após o primeiro login!
+
+## 🌐 Configurar Português Brasil
+
+Para configurar o n8n em Português Brasil, execute:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/set-portuguese.sh | sudo bash
+```
+
+Depois, limpe o cache do navegador (Ctrl+F5) para ver as mudanças.
+
+## 🛠️ Scripts Disponíveis
+
+### 1. Instalação Principal
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/install-n8n.sh | sudo bash
+```
+
+### 2. Corrigir Aviso de Cookie Seguro
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/fix-secure-cookie.sh | sudo bash
+```
+
+### 3. Configurar Português Brasil
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/set-portuguese.sh | sudo bash
+```
 
 ## 📊 Gerenciamento do n8n
 
@@ -160,6 +165,20 @@ sudo ufw allow 5678/tcp
 2. Verifique se o n8n está rodando:
 ```bash
 pm2 status
+```
+
+### Aviso de Cookie Seguro
+
+Execute o script de correção:
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/fix-secure-cookie.sh | sudo bash
+```
+
+### Interface em Inglês
+
+Execute o script de português:
+```bash
+curl -fsSL https://raw.githubusercontent.com/rodrigolopesto/n8n-installer/main/set-portuguese.sh | sudo bash
 ```
 
 ### Resetar Instalação
